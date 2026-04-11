@@ -2,7 +2,7 @@ import { gameData } from "../data_version.js";
 import { e } from "../utils.js";
 import { getTypeEffectiveness } from "../weakness.js";
 
-import defensiveAbilities from "../data/defensiveAbilities.js";
+import defensiveAbilities from "../defensiveAbilities.js";
 
 // Build sorted list of all defensive ability names
 function getAllDefensiveAbilityNames() {

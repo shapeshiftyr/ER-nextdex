@@ -4,8 +4,7 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -13,8 +12,7 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -22,13 +20,11 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Ice",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -36,8 +32,7 @@ export default {
       "resists": [
         {
           "damageSource": "Poison",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -45,8 +40,7 @@ export default {
       "resists": [
         {
           "damageSource": "Rock",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -54,8 +48,7 @@ export default {
       "resists": [
         {
           "damageSource": "Grass",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -64,7 +57,6 @@ export default {
         {
           "damageSource": "Water",
           "multiplier": 0.5,
-          "resistType": "resist",
           "bonusEffect": "+2 Def"
         }
       ]
@@ -73,8 +65,7 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -82,8 +73,7 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -91,8 +81,7 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -100,8 +89,7 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -109,13 +97,11 @@ export default {
       "resists": [
         {
           "damageSource": "Water",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Ground",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -123,13 +109,11 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Ice",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -137,13 +121,11 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Ice",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -151,8 +133,7 @@ export default {
       "resists": [
         {
           "damageSource": "Ghost",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -160,13 +141,11 @@ export default {
       "resists": [
         {
           "damageSource": "Ghost",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Dark",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -174,18 +153,15 @@ export default {
       "resists": [
         {
           "damageSource": "Dark",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Ghost",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Psychic",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -193,18 +169,15 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Electric",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Water",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -212,13 +185,11 @@ export default {
       "resists": [
         {
           "damageSource": "Water",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Ice",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -226,8 +197,7 @@ export default {
       "resists": [
         {
           "damageSource": "Poison",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -235,13 +205,11 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.25,
-          "resistType": "resist"
+          "multiplier": 0.25
         },
         {
           "damageSource": "Ice",
-          "multiplier": 0.25,
-          "resistType": "resist"
+          "multiplier": 0.25
         }
       ]
     },
@@ -250,13 +218,11 @@ export default {
         {
           "damageSource": "Water",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "heals from Water"
         },
         {
           "damageSource": "Fire",
-          "multiplier": 2,
-          "resistType": "weakness"
+          "multiplier": 2
         }
       ]
     },
@@ -264,23 +230,19 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -288,23 +250,19 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -312,13 +270,11 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 2,
-          "resistType": "weakness"
+          "multiplier": 2
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -326,13 +282,11 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 2,
-          "resistType": "weakness"
+          "multiplier": 2
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -340,13 +294,11 @@ export default {
       "resists": [
         {
           "damageSource": "Water",
-          "multiplier": 2,
-          "resistType": "weakness"
+          "multiplier": 2
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -354,13 +306,11 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 2,
-          "resistType": "weakness"
+          "multiplier": 2
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -368,13 +318,11 @@ export default {
       "resists": [
         {
           "damageSource": "Fire",
-          "multiplier": 4,
-          "resistType": "weakness"
+          "multiplier": 4
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.25,
-          "resistType": "resist"
+          "multiplier": 0.25
         }
       ]
     },
@@ -382,8 +330,7 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -391,8 +338,7 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -400,13 +346,11 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -414,8 +358,7 @@ export default {
       "resists": [
         {
           "damageSource": "Special",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -423,8 +366,7 @@ export default {
       "resists": [
         {
           "damageSource": "Special",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -432,8 +374,7 @@ export default {
       "resists": [
         {
           "damageSource": "Special",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -441,8 +382,7 @@ export default {
       "resists": [
         {
           "damageSource": "Special",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -450,8 +390,7 @@ export default {
       "resists": [
         {
           "damageSource": "Special",
-          "multiplier": 0.7,
-          "resistType": "resist"
+          "multiplier": 0.7
         }
       ]
     },
@@ -459,18 +398,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.85,
-          "resistType": "resist"
+          "multiplier": 0.85
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.85,
-          "resistType": "resist"
+          "multiplier": 0.85
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.85,
-          "resistType": "resist"
+          "multiplier": 0.85
         }
       ],
       "addedType": "Ghost"
@@ -479,18 +415,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.9,
-          "resistType": "resist"
+          "multiplier": 0.9
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.9,
-          "resistType": "resist"
+          "multiplier": 0.9
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.9,
-          "resistType": "resist"
+          "multiplier": 0.9
         }
       ],
       "addedType": "Rock"
@@ -499,18 +432,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -518,18 +448,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -537,18 +464,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -556,18 +480,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -575,18 +496,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -594,18 +512,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -613,18 +528,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.9,
-          "resistType": "resist"
+          "multiplier": 0.9
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.9,
-          "resistType": "resist"
+          "multiplier": 0.9
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.9,
-          "resistType": "resist"
+          "multiplier": 0.9
         }
       ]
     },
@@ -632,18 +544,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.7,
-          "resistType": "resist"
+          "multiplier": 0.7
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.7,
-          "resistType": "resist"
+          "multiplier": 0.7
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.7,
-          "resistType": "resist"
+          "multiplier": 0.7
         }
       ]
     },
@@ -651,18 +560,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -670,18 +576,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -689,18 +592,15 @@ export default {
       "resists": [
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -708,23 +608,19 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.65,
-          "resistType": "resist"
+          "multiplier": 0.65
         },
         {
           "damageSource": "Physical",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Special",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         },
         {
           "damageSource": "Contact",
-          "multiplier": 0.8,
-          "resistType": "resist"
+          "multiplier": 0.8
         }
       ]
     },
@@ -732,8 +628,7 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.65,
-          "resistType": "resist"
+          "multiplier": 0.65
         }
       ]
     },
@@ -741,8 +636,7 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.65,
-          "resistType": "resist"
+          "multiplier": 0.65
         }
       ]
     },
@@ -750,8 +644,7 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.65,
-          "resistType": "resist"
+          "multiplier": 0.65
         }
       ]
     },
@@ -759,8 +652,7 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.65,
-          "resistType": "resist"
+          "multiplier": 0.65
         }
       ]
     },
@@ -768,8 +660,7 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.65,
-          "resistType": "resist"
+          "multiplier": 0.65
         }
       ]
     },
@@ -777,8 +668,7 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.65,
-          "resistType": "resist"
+          "multiplier": 0.65
         }
       ]
     },
@@ -786,8 +676,7 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.5,
-          "resistType": "resist"
+          "multiplier": 0.5
         }
       ]
     },
@@ -795,8 +684,7 @@ export default {
       "resists": [
         {
           "damageSource": "SE",
-          "multiplier": 0.65,
-          "resistType": "resist"
+          "multiplier": 0.65
         }
       ]
     },
@@ -810,13 +698,11 @@ export default {
           "resistance": [
             {
               "damageSource": "Ghost",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             },
             {
               "damageSource": "Dark",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             }
           ]
         }
@@ -832,8 +718,7 @@ export default {
           "resistance": [
             {
               "damageSource": "Fire",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             }
           ]
         }
@@ -849,8 +734,7 @@ export default {
           "resistance": [
             {
               "damageSource": "Special",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             }
           ]
         }
@@ -866,8 +750,7 @@ export default {
           "resistance": [
             {
               "damageSource": "Physical",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             }
           ]
         }
@@ -883,18 +766,15 @@ export default {
           "resistance": [
             {
               "damageSource": "Physical",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             },
             {
               "damageSource": "Special",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             },
             {
               "damageSource": "Contact",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             }
           ]
         }
@@ -905,7 +785,6 @@ export default {
         {
           "damageSource": "Fire",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "x1.5 Fire moves after hit"
         }
       ]
@@ -915,7 +794,6 @@ export default {
         {
           "damageSource": "Grass",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "redirects, +Atk"
         }
       ]
@@ -925,7 +803,6 @@ export default {
         {
           "damageSource": "Electric",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "heals 25% HP"
         }
       ]
@@ -935,7 +812,6 @@ export default {
         {
           "damageSource": "Electric",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "redirects, +Atk"
         }
       ]
@@ -945,7 +821,6 @@ export default {
         {
           "damageSource": "Electric",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "+Speed"
         }
       ]
@@ -955,7 +830,6 @@ export default {
         {
           "damageSource": "Water",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "heals 25% HP"
         }
       ]
@@ -965,7 +839,6 @@ export default {
         {
           "damageSource": "Water",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "redirects, +Atk"
         }
       ]
@@ -975,7 +848,6 @@ export default {
         {
           "damageSource": "Water",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "sets Mist"
         }
       ]
@@ -984,8 +856,7 @@ export default {
       "resists": [
         {
           "damageSource": "Ground",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ]
     },
@@ -993,8 +864,7 @@ export default {
       "resists": [
         {
           "damageSource": "Ground",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ],
       "addedType": "Dragon"
@@ -1003,8 +873,7 @@ export default {
       "resists": [
         {
           "damageSource": "Rock",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ]
     },
@@ -1013,7 +882,6 @@ export default {
         {
           "damageSource": "Poison",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "redirects, heals 25% HP"
         }
       ]
@@ -1023,7 +891,6 @@ export default {
         {
           "damageSource": "Flying",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "+Speed"
         }
       ]
@@ -1033,7 +900,6 @@ export default {
         {
           "damageSource": "Fire",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "+Def sharply"
         }
       ]
@@ -1043,13 +909,11 @@ export default {
         {
           "damageSource": "Fire",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "Fire: x1.5 Fire moves | Water: heals 25% HP"
         },
         {
           "damageSource": "Water",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ]
     },
@@ -1058,7 +922,6 @@ export default {
         {
           "damageSource": "Dark",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "+Atk"
         }
       ]
@@ -1068,7 +931,6 @@ export default {
         {
           "damageSource": "Ice",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "redirects, +Atk"
         }
       ]
@@ -1078,7 +940,6 @@ export default {
         {
           "damageSource": "Ground",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "heals 25% HP"
         }
       ]
@@ -1087,8 +948,7 @@ export default {
       "resists": [
         {
           "damageSource": "Ground",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ],
       "addedType": "Psychic"
@@ -1097,8 +957,7 @@ export default {
       "resists": [
         {
           "damageSource": "Ground",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ]
     },
@@ -1106,8 +965,7 @@ export default {
       "resists": [
         {
           "damageSource": "Ground",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ]
     },
@@ -1116,7 +974,6 @@ export default {
         {
           "damageSource": "Ground",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "heals 25% HP"
         }
       ],
@@ -1129,8 +986,7 @@ export default {
           "resistance": [
             {
               "damageSource": "Water",
-              "multiplier": 0,
-              "resistType": "immune"
+              "multiplier": 0
             }
           ]
         }
@@ -1141,7 +997,6 @@ export default {
         {
           "damageSource": "Water",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "Water: heals 25% HP, redirects"
         }
       ]
@@ -1156,8 +1011,7 @@ export default {
           "resistance": [
             {
               "damageSource": "Water",
-              "multiplier": 0,
-              "resistType": "immune"
+              "multiplier": 0
             }
           ]
         }
@@ -1173,8 +1027,7 @@ export default {
           "resistance": [
             {
               "damageSource": "Fire",
-              "multiplier": 0,
-              "resistType": "immune"
+              "multiplier": 0
             }
           ]
         }
@@ -1184,8 +1037,7 @@ export default {
       "resists": [
         {
           "damageSource": "Ground",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ],
       "addedType": "Fairy"
@@ -1194,8 +1046,7 @@ export default {
       "resists": [
         {
           "damageSource": "Dark",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ]
     },
@@ -1204,7 +1055,6 @@ export default {
         {
           "damageSource": "Fire",
           "multiplier": 0,
-          "resistType": "immune",
           "bonusEffect": "redirects, +Atk"
         }
       ]
@@ -1213,18 +1063,15 @@ export default {
       "resists": [
         {
           "damageSource": "Ghost",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         },
         {
           "damageSource": "Bug",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         },
         {
           "damageSource": "Dark",
-          "multiplier": 0,
-          "resistType": "immune"
+          "multiplier": 0
         }
       ]
     },
@@ -1307,18 +1154,15 @@ export default {
           "resistance": [
             {
               "damageSource": "Physical",
-              "multiplier": 0.65,
-              "resistType": "resist"
+              "multiplier": 0.65
             },
             {
               "damageSource": "Special",
-              "multiplier": 0.65,
-              "resistType": "resist"
+              "multiplier": 0.65
             },
             {
               "damageSource": "Contact",
-              "multiplier": 0.65,
-              "resistType": "resist"
+              "multiplier": 0.65
             }
           ]
         }
@@ -1334,18 +1178,15 @@ export default {
           "resistance": [
             {
               "damageSource": "Physical",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             },
             {
               "damageSource": "Special",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             },
             {
               "damageSource": "Contact",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             }
           ]
         }
@@ -1361,8 +1202,7 @@ export default {
           "resistance": [
             {
               "damageSource": "Ghost",
-              "multiplier": 0.5,
-              "resistType": "resist"
+              "multiplier": 0.5
             }
           ]
         }
