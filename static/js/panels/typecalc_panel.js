@@ -2,177 +2,29 @@ import { gameData } from "../data_version.js";
 import { e } from "../utils.js";
 import { getTypeEffectiveness } from "../weakness.js";
 
-// All defensive abilities grouped by effect type
-const defensiveAbilities = {
-    // Immunity: nullify damage from type entirely
-    immunity: {
-        "Flash Fire": ["Fire"],
-        "Sap Sipper": ["Grass"],
-        "Volt Absorb": ["Electric"],
-        "Lightning Rod": ["Electric"],
-        "Motor Drive": ["Electric"],
-        "Water Absorb": ["Water"],
-        "Dry Skin": ["Water"],
-        "Storm Drain": ["Water"],
-        "Evaporate": ["Water"],
-        "Levitate": ["Ground"],
-        "Dragonfly": ["Ground"],
-        "Mountaineer": ["Rock"],
-        "Poison Absorb": ["Poison"],
-        "Aerodynamics": ["Flying"],
-        "Well Baked Body": ["Fire"],
-        "Elemental Vortex": ["Fire", "Water"],
-        "Justified": ["Dark"],
-        "Ice Dew": ["Ice"],
-        "Earth Eater": ["Ground"],
-        "Hover": ["Ground"],
-        "Aerialist": ["Ground"],
-        "Imposing Wings": ["Ground"],
-        "Desolate Sun": ["Ground", "Water"],
-        "Reservoir": ["Water"],
-        "Desolate Land": ["Water"],
-        "Primordial Sea": ["Fire"],
-        "Fey Flight": ["Ground"],
-        "Radiance": ["Dark"],
-        "Heat Sink": ["Fire"],
-    },
-    // Adds a defensive type
-    addType: {
-        "Phantom": "Ghost",
-        "Metallic": "Steel",
-        "Dragonfly": "Dragon",
-        "Half Drake": "Dragon",
-        "Ice Age": "Ice",
-        "Grounded": "Ground",
-        "Aquatic": "Water",
-        "Turboblaze": "Fire",
-        "Teravolt": "Electric",
-        "Fairy Tale": "Fairy",
-        "Aquatic Dweller": "Water",
-        "Metallic Jaws": "Steel",
-        "Bruiser": "Fighting",
-        "Rocky Exterior": "Rock",
-        "Lightning Born": "Electric",
-        "Komodo": "Dragon",
-        "Fey Flight": "Fairy",
-        "Dead Bark": "Ghost",
-        "Lightsaber": "Fire",
-        "Hover": "Psychic",
-        "Ominous Shroud": "Ghost",
-        "Voltron": "Steel",
-        "Waterborne": "Water",
-        "Atlantic Ruler": "Water",
-        "Draconic Might": "Dragon",
-        "Dragonfruit": "Dragon",
-        "Witch Broom": "Psychic",
-        "Rock Armor": "Rock",
-    },
-    // Type-based multipliers: { ability: { type: multiplier } }
-    typeMultipliers: {
-        // x0.5 resists
-        "Water Bubble": { "Fire": 0.5 },
-        "Seaweed": { "Fire (if Grass-type)": 0.5 },
-        "Heatproof": { "Fire": 0.5 },
-        "Iron Giant": { "Fire": 0.5 },
-        "Thick Fat": { "Fire": 0.5, "Ice": 0.5 },
-        "Immunity": { "Poison": 0.5 },
-        "Fossilized": { "Rock": 0.5 },
-        "Raw Wood": { "Grass": 0.5 },
-        "Water Compaction": { "Water": 0.5 },
-        "Old Mariner": { "Fire": 0.5 },
-        "Flame Bubble": { "Fire": 0.5 },
-        "Deep Freeze": { "Fire": 0.5 },
-        "Droideka": { "Fire": 0.5 },
-        "Thermal Entropy": { "Fire": 0.5 },
-        "Strong Foundation": { "Water": 0.5, "Ground": 0.5 },
-        "Sumo Guard": { "Fire": 0.5, "Ice": 0.5 },
-        "Tummyache": { "Fire": 0.5, "Ice": 0.5 },
-        "Purifying Salt": { "Ghost": 0.5 },
-        "Heavy Metal": { "Ghost": 0.5, "Dark": 0.5 },
-        "Aegis Ward": { "Dark": 0.5, "Ghost": 0.5, "Psychic": 0.5 },
-        "Elemental Aegis": { "Fire": 0.5, "Electric": 0.5, "Water": 0.5 },
-        "Magma Armor": { "Water": 0.5, "Ice": 0.5 },
-        "Hyper Cleanse": { "Poison": 0.5 },
-        // x0.25 quad resists
-        "Thick Blubber": { "Fire": 0.25, "Ice": 0.25 },
-        // x2 weaknesses
-        "Fluffy": { "Fire": 2 },
-        "Puffy": { "Fire": 2 },
-        "Liquified": { "Water": 2 },
-        "Dry Skin": { "Fire": 2 },
-        "Massive Pelt": { "Fire": 2 },
-        // x4 weaknesses
-        "Fluffiest": { "Fire": 4 },
-    },
-    // Damage category modifiers: { ability: { Physical, Special, Contact } multiplier }
-    dmgCategory: {
-        "Fur Coat": { Physical: 0.5 },
-        "Apple Enlightenment": { Physical: 0.5 },
-        "Prismatic Fur": { Physical: 0.5, Special: 0.5 },
-        "Ice Scales": { Special: 0.5 },
-        "Fire Scales": { Special: 0.5 },
-        "Rainbow Scales": { Special: 0.5 },
-        "Fluffy": { Contact: 0.5 },
-        "Puffy": { Contact: 0.5 },
-        "Massive Pelt": { Contact: 0.5 },
-        "Liquified": { Contact: 0.5 },
-        "Fluffiest": { Contact: 0.25 },
-        "Ice Plumes": { Special: 0.5 },
-        "Prism Scales": { Special: 0.7 },
-        "Sand Guard": { "Special (in sand)": 0.5 },
-        "Sun Basking": { "Physical (in sun)": 0.5 },
-        // General damage reduction (all categories)
-        "Dead Bark": { Physical: 0.85, Special: 0.85, Contact: 0.85 },
-        "Rock Armor": { Physical: 0.9, Special: 0.9, Contact: 0.9 },
-        "Battle Armor": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Shell Armor": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Dream State": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Crust Coat": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Parry": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Deflect": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Feathercoat": { Physical: 0.9, Special: 0.9, Contact: 0.9 },
-        "Mucus Membrane": { Physical: 0.7, Special: 0.7, Contact: 0.7 },
-        // Combos inheriting Shell Armor / Battle Armor (20% less)
-        "Faraday Cage": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Toxic Shell": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Shattered Armor": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-        "Fortress": { Physical: 0.8, Special: 0.8, Contact: 0.8 },
-    },
-    // Stat boost when hit by type (informational only)
-    statBoost: {
-        "Cryo Architect": ["Water", "Ice"],
-    },
-    // Nullifies weakness to types (informational only)
-    nullWeakness: {
-        "Gifted Mind": ["Ghost", "Bug", "Dark"],
-    },
-    // Reduces super-effective damage (informational — affects all SE types)
-    resistSE: {
-        "Filter": 0.65,
-        "Solid Rock": 0.65,
-        "Prism Armor": 0.65,
-        "Permafrost": 0.65,
-        "Thick Skin": 0.65,
-        "Flame Shield": 0.65,
-        "Primal Armor": 0.5,
-        "Refrigerator": 0.65,
-        "Fortress": 0.65,
-    },
-};
+import defensiveAbilities from "../data/defensiveAbilities.js";
 
 // Build sorted list of all defensive ability names
 function getAllDefensiveAbilityNames() {
     const names = new Set();
-    for (const category of Object.values(defensiveAbilities)) {
-        for (const name of Object.keys(category)) names.add(name);
+    for (const [name, entry] of Object.entries(defensiveAbilities.effects)) {
+        // Skip if ability only has weather/terrain conditionals
+        if (!entry.resists && !entry.addedType) {
+            const onlyWeatherTerrain = (entry.conditionalResistances || []).every(
+                (cr) => cr.condition.type === "weather" || cr.condition.type === "terrain"
+            );
+            if (onlyWeatherTerrain) continue;
+        }
+        names.add(name);
     }
     return [...names].sort();
 }
 
 const defensiveAbilityNames = getAllDefensiveAbilityNames();
+const DMG_CATEGORIES = new Set(["Physical", "Special", "Contact"]);
 
 // Helper: collect values from a map category for selected abilities
-function collectFromMap(category, abilities, collector) {
+function forEachAbilityIn(category, abilities, collector) {
     for (const abi of abilities) {
         const val = category[abi];
         if (val) collector(val, abi);
@@ -223,20 +75,20 @@ function setupDropdown(btnId, options) {
     function selectOption(opt) {
         btn.val(opt.label);
         btn[0].dataset.value = opt.value;
-        close();
+        closeList();
         btn[0].blur();
         updateReadonly();
         recalculate();
     }
 
-    function open(filter) {
+    function openList(filter) {
         closeAllDropdowns();
         buildList(filter);
         list.show();
         dropdownStates[btnId].isOpen = true;
     }
 
-    function close() {
+    function closeList() {
         list.hide();
         dropdownStates[btnId].isOpen = false;
     }
@@ -251,13 +103,13 @@ function setupDropdown(btnId, options) {
     btn.off("focus").on("focus", () => {
         if (btn[0].readOnly) return;
         btn.val("");
-        open("");
+        openList("");
     });
 
-    btn.off("input").on("input", () => open(btn.val()));
+    btn.off("input").on("input", () => openList(btn.val()));
 
     btn.off("blur").on("blur", () => {
-        close();
+        closeList();
         const match = options.find((o) => o.value === btn[0].dataset.value);
         btn.val(match ? match.label : "-- None --");
     });
@@ -265,7 +117,7 @@ function setupDropdown(btnId, options) {
     btn.off("mousedown").on("mousedown", (ev) => {
         if (dropdownStates[btnId].isOpen) {
             ev.preventDefault();
-            close();
+            closeList();
             btn[0].blur();
             return;
         }
@@ -274,7 +126,7 @@ function setupDropdown(btnId, options) {
             btn[0].readOnly = false;
             btn.val("");
             btn[0].focus();
-            open("");
+            openList("");
         }
     });
 }
@@ -293,9 +145,9 @@ export function populateTypeCalc() {
     setupDropdown("typecalc-type2", [noneOption, ...typeOptions]);
     $("#typecalc-type2")[0].dataset.value = "";
 
-    const abiOptions = [noneOption, ...defensiveAbilityNames.map((n) => ({ label: n, value: n }))];
+    const abilityOptions = [noneOption, ...defensiveAbilityNames.map((n) => ({ label: n, value: n }))];
     for (let i = 0; i < 4; i++) {
-        setupDropdown(`typecalc-abi${i}`, abiOptions);
+        setupDropdown(`typecalc-abi${i}`, abilityOptions);
         $(`#typecalc-abi${i}`)[0].dataset.value = "";
     }
 
@@ -333,76 +185,105 @@ function recalculate() {
 
     const abilities = getSelectedAbilities();
 
-    // Collect added types
+    // Collect added types from effects
     const addedTypes = [];
-    collectFromMap(defensiveAbilities.addType, abilities, (type) => {
-        if (!defTypes.includes(type) && !addedTypes.includes(type)) addedTypes.push(type);
+    forEachAbilityIn(defensiveAbilities.effects, abilities, (entry) => {
+        if (entry.addedType && !defTypes.includes(entry.addedType) && !addedTypes.includes(entry.addedType)) {
+            addedTypes.push(entry.addedType);
+        }
     });
 
-    // Collect immunities
-    const immuneTo = [];
-    collectFromMap(defensiveAbilities.immunity, abilities, (types) => immuneTo.push(...types));
+    // Collect all resist modifiers from unified effects map
+    const typeMultipliers = {};
+    const dmgMods = { Physical: 100, Special: 100, Contact: 100 };
+    const allDefTypes = [...defTypes, ...addedTypes];
+    const attackTypes = getUsableTypes();
 
-    // Collect type multipliers (resist, quad resist, weakness, weakness4x — all unified)
-    const typeMults = {};
-    collectFromMap(defensiveAbilities.typeMultipliers, abilities, (map) => {
-        for (const [type, mult] of Object.entries(map)) {
-            const baseType = type.split(" ")[0]; // "Fire (if Grass-type)" -> "Fire"
-            typeMults[baseType] = (typeMults[baseType] || 1) * mult;
+    function applyResistance(resistances) {
+        for (const r of resistances) {
+            if (DMG_CATEGORIES.has(r.damageSource)) {
+                dmgMods[r.damageSource] *= r.multiplier;
+            } else if (r.damageSource !== "SE") {
+                // TODO: apply SE resist to calculation
+                typeMultipliers[r.damageSource] = (typeMultipliers[r.damageSource] ?? 1) * r.multiplier;
+            }
+        }
+    }
+
+    forEachAbilityIn(defensiveAbilities.effects, abilities, (entry) => {
+        if (entry.resists) applyResistance(entry.resists);
+        if (entry.conditionalResistances) {
+            for (const cr of entry.conditionalResistances) {
+                if (cr.condition.type === "type" && allDefTypes.includes(cr.condition.value)) {
+                    applyResistance(cr.resistance);
+                }
+                // TODO: add weather/terrain conditional resistance calcualtion
+            }
         }
     });
 
     // Calculate type effectiveness
-    const allDefTypes = [...defTypes, ...addedTypes];
-    const attackTypes = getUsableTypes();
     const coverage = {};
 
     for (const atkT of attackTypes) {
         let eff = 1;
-        if (immuneTo.includes(atkT)) {
-            eff = 0;
-        } else {
-            for (const defT of allDefTypes) {
-                eff *= getTypeEffectiveness(atkT, defT);
-            }
-            if (typeMults[atkT] !== undefined) eff *= typeMults[atkT];
+        for (const defT of allDefTypes) {
+            eff *= getTypeEffectiveness(atkT, defT);
         }
+        if (typeMultipliers[atkT] !== undefined) eff *= typeMultipliers[atkT];
         (coverage[eff] ??= []).push(atkT);
     }
 
-    // Calculate Physical / Special / Contact damage multipliers
-    const dmgMods = { Physical: 100, Special: 100, Contact: 100 };
-    collectFromMap(defensiveAbilities.dmgCategory, abilities, (map) => {
-        for (const [cat, mult] of Object.entries(map)) {
-            if (dmgMods[cat] !== undefined) dmgMods[cat] *= mult;
-        }
-    });
-
     // Build ability effect summaries
-    const abiEffects = buildAbiEffects(abilities);
+    const abilityEffects = buildAbilityEffects(abilities);
 
-    renderResult(coverage, defTypes, addedTypes, abiEffects, dmgMods);
+    renderResult(coverage, defTypes, addedTypes, abilityEffects, dmgMods);
 }
 
 // --- Effect Summary ---
 
-// Each entry: [category key, formatter function]
+function formatResistance(resistances) {
+    const typeResists = resistances.filter((r) => !DMG_CATEGORIES.has(r.damageSource));
+    const dmgResists = resistances.filter((r) => DMG_CATEGORIES.has(r.damageSource));
+    const parts = [];
+    if (typeResists.length) {
+        const sorted = [...typeResists].sort((a, b) => a.multiplier - b.multiplier);
+        for (const r of sorted) {
+            let text = r.multiplier === 0 ? `${r.damageSource} immune` : `${r.damageSource} x ${r.multiplier}`;
+            if (r.bonusEffect) text += `, ${r.bonusEffect}`;
+            parts.push(text);
+        }
+    }
+    if (dmgResists.length) {
+        const allSame = dmgResists.length > 1 && dmgResists.every((r) => r.multiplier === dmgResists[0].multiplier);
+        if (allSame) {
+            parts.push(`All moves x ${dmgResists[0].multiplier}`);
+        } else {
+            for (const r of dmgResists) {
+                let text = `${r.damageSource} moves x ${r.multiplier}`;
+                if (r.bonusEffect) text += `, ${r.bonusEffect}`;
+                parts.push(text);
+            }
+        }
+    }
+    return parts.join(" | ");
+}
+
 const effectFormatters = [
-    ["addType", (v) => `+${v} type`],
-    ["immunity", (v) => `immune: ${v.join(", ")}`],
-    ["statBoost", (v) => `stat boost: ${v.join(", ")}`],
-    ["nullWeakness", (v) => `null weakness: ${v.join(", ")}`],
-    ["typeMultipliers", (v) => Object.entries(v).map(([t, m]) => `x${m}: ${t}`).join(" | ")],
-    ["dmgCategory", (v) => {
-        const entries = Object.entries(v);
-        const allSame = entries.length > 1 && entries.every(([, m]) => m === entries[0][1]);
-        if (allSame) return `x${entries[0][1]}: All moves`;
-        return entries.map(([cat, m]) => `x${m}: ${cat} moves`).join(" | ");
+    ["effects", (v) => {
+        const parts = [];
+        if (v.addedType) parts.push(`+${v.addedType} type`);
+        if (v.resists) parts.push(formatResistance(v.resists));
+        if (v.conditionalResistances) {
+            for (const cr of v.conditionalResistances) {
+                parts.push(`${formatResistance(cr.resistance)} (if ${cr.condition.value})`);
+            }
+        }
+        return parts.join(" | ");
     }],
-    ["resistSE", (v) => `x${v}: SE moves`],
 ];
 
-function buildAbiEffects(abilities) {
+function buildAbilityEffects(abilities) {
     const results = [];
     for (const abi of abilities) {
         const effects = [];
@@ -416,8 +297,8 @@ function buildAbiEffects(abilities) {
 }
 
 // --- Render ---
-
-function renderResult(coverage, baseTypes, addedTypes, abiEffects, dmgMods) {
+// TODO: add weather/terrain selector for global type modifiers and apply conditional resistances calcualtion
+function renderResult(coverage, baseTypes, addedTypes, abilityEffects, dmgMods) {
     const container = $("#typecalc-result");
     container.empty();
 
@@ -436,7 +317,7 @@ function renderResult(coverage, baseTypes, addedTypes, abiEffects, dmgMods) {
     container.append(infoRow);
 
     // Ability effect rows
-    abiEffects.forEach((abi, i) => {
+    abilityEffects.forEach((abi, i) => {
         const row = e("div", "typecalc-abi-info");
         row.append(e("div", "typecalc-abi-name color" + (i % 2 ? "A" : "B"), abi.name));
         row.append(e("div", "typecalc-abi-effects color" + (i % 2 ? "C" : "D"), abi.effects.join(" | ")));
@@ -445,12 +326,12 @@ function renderResult(coverage, baseTypes, addedTypes, abiEffects, dmgMods) {
 
     // Physical / Special / Contact modifiers
     const modRow = e("div", "typecalc-dmg-mods");
-    for (const cat of ["Physical", "Special", "Contact"]) {
-        const pct = dmgMods[cat];
+    for (const category of ["Physical", "Special", "Contact"]) {
+        const percentage = dmgMods[category];
         const mod = e("div", "typecalc-dmg-mod");
-        mod.append(e("div", "typecalc-dmg-label", cat));
-        const valClass = pct < 100 ? "typecalc-dmg-val resist" : "typecalc-dmg-val";
-        mod.append(e("div", valClass, Math.round(pct) + "%"));
+        mod.append(e("div", "typecalc-dmg-label", category));
+        const valClass = percentage < 100 ? "typecalc-dmg-val resist" : "typecalc-dmg-val";
+        mod.append(e("div", valClass, Math.round(percentage) + "%"));
         modRow.append(mod);
     }
     container.append(modRow);
